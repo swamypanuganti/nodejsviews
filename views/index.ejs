@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <style>
+        body {
+            background-color: #58828a;
+
+        }
+        /* Add your CSS styles here */
+        /* This is just an example styling, feel free to modify */
+        .welcome-section {
+            padding: 20px;
+            background-color: #f0f0f0;
+            margin-bottom: 20px;
+        }
+        .stats {
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        .about-me {
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <%- include('partials/header') %>
+
+    <div class="welcome-section">
+        <h1>Welcome to My Website</h1>
+        <p>This is a sample homepage for my website. Feel free to explore!</p>
+    </div>
+
+    <div class="stats">
+        <h2>Statistics</h2>
+        <ul>
+            <li>Users Count: <%= userCount %></li>
+            <li>Groups Count: <%= groupCount %></li>
+            <li>Posts Count: <%= postCount %></li>
+        </ul>
+    </div>
+
+    <div class="about-me">
+        <h2>About Me</h2>
+        <p>I am a web developer passionate about creating awesome web applications!</p>
+    </div>
+</body>
+</html>

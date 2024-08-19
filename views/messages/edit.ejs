@@ -1,0 +1,25 @@
+<!-- views/groups/edit.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Group</title>
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <h1>Edit Group</h1>
+    <form action="/groups/update/<%= group._id %>?_method=PUT" method="POST">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="<%= group.name %>" required>
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" value="<%= group.email %>" required>
+        </div>
+        <button type="submit">Update Group</button>
+    </form>
+</body>
+</html>

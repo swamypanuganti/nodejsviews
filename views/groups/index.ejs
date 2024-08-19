@@ -1,0 +1,86 @@
+<!-- views/users/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Groups</title>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 50vh;
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px 0;
+            background-color: #fff;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #333;
+            color: #fff;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+        .create-button {
+            margin-top: 20px;
+        }
+        .create-button a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .create-button a:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <%- include('../partials/header') %>
+    <div class="container">
+
+    <h1>List of Groups</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% groupsData.forEach(group => { %>
+                <tr>
+                    <td><%= group.name %></td>
+                    <td><%= group.email %></td>
+                    <td><a href="/group/gotoedit/<%= group._id %>/">Edit</a></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+    <div class="create-button">        
+        <button type="submit"><a href="/groupcreate-form">Create New Group</a></button>
+
+    </div>
+    </div>
+</body>
+</html>
